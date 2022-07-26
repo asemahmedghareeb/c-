@@ -11,7 +11,7 @@ void print(const map<string,int>&mp){
 
 
     for(const pair<string,int>&item:mp)
-    cout<<item.first<<" "<<item.second<<" "<<endl;
+    cout<<item.first<<" : "<<item.second<<" "<<endl;
 }
 int main(){
 code();
@@ -20,7 +20,6 @@ code();
 map<string,int>mp;
 mp["one"]=1;
 mp["two"]=2;
-
 print(mp);
 
 
