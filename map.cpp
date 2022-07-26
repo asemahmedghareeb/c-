@@ -7,11 +7,21 @@ freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 #endif
 }
+void print(const map<string,int>&mp){
+
+
+    for(const pair<string,int>&item:mp)
+    cout<<item.first<<" "<<item.second<<" "<<endl;
+}
 int main(){
 code();
 
-vector<int>v{1,5,3,55,2};
-sort(v.begin(),v.end())
+
+map<string,int>mp;
+mp["one"]=1;
+mp["two"]=2;
+
+print(mp);
 
 
 
@@ -23,5 +33,5 @@ sort(v.begin(),v.end())
 
 
 
-return 0;
+
 }
