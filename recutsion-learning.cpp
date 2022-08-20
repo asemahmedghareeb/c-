@@ -2,10 +2,28 @@
 using namespace std;
 
 int fibonacci(int num){
-    if(num==1||num==0)
-        return num;
+    if(num==1||num==2)
+        return 1;
     return fibonacci(num - 1) + fibonacci(num - 2);
 }
+
+
+int fibonacci2(int num,int memo[]){
+    if(memo[num]!=0)
+        return memo[num];
+    int result=0;
+    if (num == 1 || num == 2)
+        return 1;
+
+    else {
+        int result= fibonacci2(num - 1,memo) + fibonacci2(num - 2,memo);
+    }
+    memo[num] = result;
+    return result;
+}
+
+
+
 // 0 1 2 3 4 5
 // 0 1 1 2 3 5
 //                           // fib(5)
@@ -61,20 +79,8 @@ int sum_range2(int n1, int n2) {
 }
 
 
-void pyramid(int n){
-    if(n<0)return;
-    for (int i = 0; i < n;i++)cout << "*";
-    cout << endl;
-    return pyramid(n - 1);
-}
 
 
-void pyramid2(int n,int x=1){
-    if(x>n)return;
-    for (int i = 0; i < x;i++)cout << "*";
-    cout << endl;
-    return pyramid2(n ,x+1);
-}
 
 
 void f(int n){
@@ -92,9 +98,36 @@ void f2(int n){
     cout << n % 10<<endl;
     f(n / 10);
 }
+
+// void pyramid2(int n,int x=1){
+//     if(x>n)return;
+//     for (int i = x; i < n;i++)
+//         cout << " ";
+//     for (int i = 0; i < x; i++)
+//         cout << "*";
+//     for (int i = 1; i < x; i++)
+//         cout << "*";
+//     cout << endl;
+//     return pyramid2(n ,x+1);
+// }
+
+void pyramid(int n,int x=0){
+    if(n<0)return;
+    for (int i = 0; i < x;i++)
+        cout << " ";
+    for (int i = 0; i < n; i++)
+        cout << "*";
+    for (int i = 1; i < n; i++)
+        cout << "*";
+
+    cout << endl;
+    return pyramid(n - 1,x+1);
+}
 int main(){
 
-f(100);
+    int x;
+    cin >> x;
+    pyramid(x);
 
     return 0;
 }
