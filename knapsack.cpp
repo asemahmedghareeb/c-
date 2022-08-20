@@ -2,10 +2,10 @@
 typedef long long ll;
 using namespace std;
 
-struct item
-{
+struct item{
     ll weight, val;
 };
+
 bool preceed(item x, item y)
 {
     return (x.val > y.val);
